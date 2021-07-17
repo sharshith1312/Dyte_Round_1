@@ -40,37 +40,9 @@ module.exports = {
 		}
 	},
 
-	/**
-	 * Action Hooks
-	 */
-	// hooks: {
-	// 	before: {
-	// 		/**
-	// 		 * Register a before hook for the `create` action.
-	// 		 * It sets a default value for the quantity field.
-	// 		 *
-	// 		 * @param {Context} ctx
-	// 		 */
-	// 		create(ctx) {
-	// 			ctx.params.quantity = 0;
-	// 		}
-	// 	}
-	// },
 
-	/**
-	 * Actions
-	 */
 	actions: {
-		/**
-		 * The "moleculer-db" mixin registers the following actions:
-		 *  - list
-		 *  - find
-		 *  - count
-		 *  - create
-		 *  - insert
-		 *  - update
-		 *  - remove
-		 */
+		
 
 		// register, update ,list ,trigger
 		list:{
@@ -122,13 +94,7 @@ module.exports = {
 			async handler(ctx){
 				console.log("update",ctx.params);
 				var {id,targetUrl}=ctx.params;
-				// let urls=await this.adapter.find({_type:'tasks'});
-				// console.log(typeof(urls[0]._id))
-				// console.log(urls)
-				// var o_id=new ObjectId(id)
-				// console.log(typeof(o_id))
-			
-				// console.log(o_id)
+				
 				try{
 					let url=await this.adapter.findById(id);
 					console.log("url is",url)
@@ -209,11 +175,7 @@ module.exports = {
 				.then((res)=>{
 					console.log(res[0].value)
 					// return JSON.stringify(res[0].value)
-				})
-
-				
-				
-				
+				})			
 
 			},
 		},
